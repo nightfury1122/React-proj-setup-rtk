@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { ordered as cakeOrdered } from '../cake/cakeSlice'
 
-initialState = {
+const initialState = {
     numberOfIcecreams: 10,
 }
 
