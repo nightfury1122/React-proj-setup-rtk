@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import {cakeReducer} from '../app/features/cake/cakeSlice'
-import {icecreamReducer} from '../app/features/iceCream/iceCreamSlice'
-import {userReducer} from '../app/features/user/userSlice'
-const reduxLogger = require('redux-logger')
+import cakeReducer from '../app/features/cake/cakeSlice'
+import icecreamReducer from '../app/features/iceCream/iceCreamSlice'
+import userReducer from '../app/features/user/userSlice'
+// const reduxLogger = require('redux-logger')
 
 //Logger middleware implemented to get a better understanding of using middleware with rtk
 
 // Create logger is stored in a constant
-const logger = reduxLogger.createLogger()
+// const logger = reduxLogger.createLogger()
 
 // ConfigureStore() accepts an object as argument
 const store = configureStore({
