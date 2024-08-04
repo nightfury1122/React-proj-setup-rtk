@@ -16,7 +16,7 @@ const initialState = {
 export const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
     // This returns a promise so we add a .then block
     return axios.get('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.data.map((user) => user.id))
+        .then(response => response.data.map((user) => user.name))
 })
 
 // We will add the extra reducers for asyncthunk here 
@@ -30,7 +30,7 @@ const userSlice = createSlice({
         builder.addCase(fetchUsers.fulfilled, (state, action) => {
             state.loading = false
             state.users = action.payload
-            error = ''
+            state.error = ''
         })
         builder.addCase(fetchUsers.rejected, (state, action) => {
             state.loading = false
@@ -39,5 +39,6 @@ const userSlice = createSlice({
         })
     }
 })
+
 
 export default userSlice.reducer
